@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="378.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ims.MainController">
+    <AnchorPane layoutX="19.0" layoutY="9.0" prefHeight="356.0" prefWidth="986.0">
+       <Label fx:id="mainTitle" graphicTextGap="1.0" layoutX="6.0" layoutY="22.0" prefHeight="20.0" prefWidth="216.0" text="Inventory Management System">
+           <font>
+               <Font name="System Bold" size="16.0" />
+           </font>
+       </Label>
+        <AnchorPane layoutX="51.0" layoutY="65.0" prefHeight="248.0" prefWidth="417.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+            <Label layoutX="26.0" layoutY="21.0" text="Parts">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+            <AnchorPane layoutX="187.0" layoutY="211.0">
+                <Button mnemonicParsing="false" onAction="#displayPartMenu" prefWidth="60.0" text="Add" />
+                <Button layoutX="70.0" mnemonicParsing="false" onAction="#displayModifyPartMenu" prefWidth="60.0" text="Modify" />
+                <Button layoutX="140.0" mnemonicParsing="false" onAction="#alertPartDelete" prefWidth="60.0" text="Delete" />
+            </AnchorPane>
+            <AnchorPane layoutX="206.0" layoutY="15.0" prefHeight="29.0" prefWidth="181.0">
+                <TextField fx:id="partSearchBar" layoutX="16.0" layoutY="2.0" prefHeight="27.0" prefWidth="162.0" promptText="Search by Part ID or Name" />
+            </AnchorPane>
+            <TableView fx:id="partsTable" layoutX="12.0" layoutY="45.0" prefHeight="166.0" prefWidth="394.0">
+                <columns>
+                    <TableColumn fx:id="partIdCol" prefWidth="55.0" text="Part ID" />
+                    <TableColumn fx:id="partNameCol" prefWidth="87.0" text="Part Name" />
+                    <TableColumn fx:id="partInvCol" prefWidth="120.0" text="Inventory Level" />
+                    <TableColumn fx:id="partPriceCol" prefWidth="131.0" text="Price/Cost Per Unit" />
+                </columns>
+            </TableView>
+        </AnchorPane>
+        <AnchorPane layoutX="528.0" layoutY="65.0" prefHeight="248.0" prefWidth="417.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+            <Label layoutX="21.0" layoutY="20.0" text="Products">
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font></Label>
+            <AnchorPane layoutX="188.0" layoutY="212.0">
+                <Button mnemonicParsing="false" onAction="#displayProductMenu" prefHeight="27.0" prefWidth="60.0" text="Add" />
+                <Button layoutX="70.0" mnemonicParsing="false" onAction="#displayModifyProductMenu" prefWidth="60.0" text="Modify" />
+                <Button layoutX="140.0" mnemonicParsing="false" onAction="#alertProductDelete" prefWidth="60.0" text="Delete" />
+            </AnchorPane>
+            <AnchorPane layoutX="182.0" layoutY="16.0" prefHeight="27.0" prefWidth="206.0">
+                <TextField fx:id="productSearchBar" layoutX="25.0" prefHeight="27.0" prefWidth="181.0" promptText="Search by Product ID or Name" />
+            </AnchorPane>
+            <TableView fx:id="productTable" layoutX="9.0" layoutY="46.0" prefHeight="166.0" prefWidth="400.0">
+                <columns>
+                    <TableColumn fx:id="productIdCol" prefWidth="70.0" text="Product ID" />
+                    <TableColumn fx:id="productNameCol" prefWidth="105.0" text="Product Name" />
+                    <TableColumn fx:id="productInvCol" prefWidth="103.0" text="Inventory Level" />
+                    <TableColumn fx:id="productPriceCol" prefWidth="121.0" text="Price/Cost Per Unit" />
+                </columns>
+            </TableView>
+        </AnchorPane>
+      <Button fx:id="exitButton" layoutX="846.0" layoutY="322.0" mnemonicParsing="false" onAction="#exitSystem" text="Exit" />
+    </AnchorPane>
+</AnchorPane>
